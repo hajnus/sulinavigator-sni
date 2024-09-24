@@ -9,7 +9,7 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Zöld szín */
     color: white;
 }
 
@@ -30,7 +30,7 @@ p {
 }
 
 .slideshow-container {
-    position: relative; /* Fontos: relatív pozíció a lapozó gombokhoz */
+    position: relative; /* Fontos, hogy a tartalomhoz igazodjon */
     max-width: 800px;
     margin: auto;
     background-color: white;
@@ -48,45 +48,30 @@ p {
     height: auto;
 }
 
-/* Előző és Következő gombok */
+/* Előző és Következő gombok a slideshow alatt */
 .prev, .next {
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: 50px; /* Szélesség a gombok számára */
-    padding: 16px;
-    margin-top: -22px; /* A gombok középre igazítása függőlegesen */
-    background-color: rgba(0, 0, 0, 0.5);
+    position: relative; /* Nem abszolút, így a tartalom alatt jelenik meg */
+    display: inline-block;
+    width: auto;
+    padding: 10px 20px;
+    margin: 20px 10px 0; /* Kis margó a tartalom fölött */
+    background-color: #4CAF50; /* Zöld szín */
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 3px;
-    user-select: none;
+    transition: background-color 0.3s ease;
+    border-radius: 25px; /* Lekerekített gombok */
     text-align: center;
-    z-index: 1; /* Biztosítja, hogy a gombok a képek előtt jelenjenek meg */
-}
-
-.prev {
-    left: 0;
-    border-radius: 0 3px 3px 0;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    text-decoration: none; /* Nincs aláhúzás */
+    border: none;
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #45a049; /* Sötétebb zöld hover szín */
 }
 
-/* Gombok alaphelyzet */
-.prev, .next {
-    display: block; /* Győződj meg arról, hogy látszanak a gombok */
-}
-
-/* Képek váltásának animációja */
+/* Slide váltás animációja */
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -104,4 +89,19 @@ p {
     to {opacity: 1}
 }
 
-/* Egyéb stílusok, ha szükséges */
+/* Újraindulás vizuális jelzése */
+.restart {
+    animation: restartFlash 0.5s ease-in-out;
+}
+
+@keyframes restartFlash {
+    0% { background-color: rgba(0, 255, 0, 0.3); } /* Zöld villanás */
+    100% { background-color: transparent; }
+}
+
+/* A slideshow alatti tartalom stílusa */
+.slideshow-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
