@@ -30,7 +30,7 @@ p {
 }
 
 .slideshow-container {
-    position: relative; /* Fontos, hogy a tartalomhoz igazodjon */
+    position: relative;
     max-width: 800px;
     margin: auto;
     background-color: white;
@@ -48,14 +48,17 @@ p {
     height: auto;
 }
 
-/* Előző és Következő gombok a slideshow alatt */
+/* Gombok középre igazítása */
+.slideshow-controls {
+    text-align: center; /* Középre igazítja a gombokat */
+    margin-top: 20px; /* Kis távolság a slideshow-tól */
+}
+
 .prev, .next {
     cursor: pointer;
-    position: relative; /* Nem abszolút, így a tartalom alatt jelenik meg */
-    display: inline-block;
+    display: inline-block; /* Egymás mellé rendezett gombok */
     width: auto;
     padding: 10px 20px;
-    margin: 20px 10px 0; /* Kis margó a tartalom fölött */
     background-color: #4CAF50; /* Zöld szín */
     color: white;
     font-weight: bold;
@@ -65,6 +68,7 @@ p {
     text-align: center;
     text-decoration: none; /* Nincs aláhúzás */
     border: none;
+    margin: 0 10px; /* Kis margó a gombok között */
 }
 
 .prev:hover, .next:hover {
@@ -98,10 +102,3 @@ p {
     0% { background-color: rgba(0, 255, 0, 0.3); } /* Zöld villanás */
     100% { background-color: transparent; }
 }
-
-/* A slideshow alatti tartalom stílusa */
-.slideshow-controls {
-    text-align: center;
-    margin-top: 10px;
-}
-
