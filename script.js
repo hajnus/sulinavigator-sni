@@ -25,7 +25,12 @@ function loadSlides() {
 function showSlides(n) {
     let slides = document.getElementsByClassName('slide');
 
-    if (n > slides.length) { slideIndex = 1 }
+    if (n > slides.length) { 
+        slideIndex = 1; 
+        // Újraindítás vizuális effekt
+        slides[slideIndex - 1].classList.add('restart');
+        setTimeout(() => slides[slideIndex - 1].classList.remove('restart'), 500);
+    }
     if (n < 1) { slideIndex = slides.length }
 
     for (let i = 0; i < slides.length; i++) {
