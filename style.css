@@ -25,7 +25,7 @@ h2 {
 
 p {
     font-size: 1.2em;
-    font-style: italic;
+    font-style: italic; /* Döntött betűk */
     margin: 0;
 }
 
@@ -48,24 +48,13 @@ p {
     height: auto;
 }
 
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from { opacity: 0.4 }
-    to { opacity: 1 }
-}
-
-/* Előző/Nyíl gombok */
+/* Előző és Következő gombok */
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
     padding: 16px;
-    margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 18px;
