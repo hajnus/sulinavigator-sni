@@ -1,18 +1,18 @@
 let slideIndex = 1;
-let totalSlides = 6; // Jelenleg 6 képed van, de ezt dinamikusan kezelheted a képek számával
+let totalSlides = 6; // Diák száma, dinamikusan kezelhető
 
 // Diák dinamikus hozzáadása
 function loadSlides() {
     let slideshowContainer = document.getElementById('slideshow-container');
 
     for (let i = 1; i <= totalSlides; i++) {
-        // Létrehozzuk a slide divet
+        // Slide div létrehozása
         let slideDiv = document.createElement('div');
         slideDiv.classList.add('slide', 'fade');
 
-        // Kép hozzáadása a slide-hoz
+        // Kép hozzáadása
         let img = document.createElement('img');
-        img.src = `images/image${i}.jpg`; // A képek az "images" mappában vannak
+        img.src = `images/image${i}.jpg`; // Képek az "images" mappában
         img.alt = `Slide ${i}`;
         slideDiv.appendChild(img);
 
@@ -21,7 +21,7 @@ function loadSlides() {
     }
 }
 
-// Jelenítse meg a megfelelő slide-ot
+// Megjeleníti a megfelelő slide-ot
 function showSlides(n) {
     let slides = document.getElementsByClassName('slide');
 
