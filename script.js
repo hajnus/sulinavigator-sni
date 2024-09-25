@@ -24,27 +24,44 @@ function loadSlides() {
 // Megjeleníti a megfelelő slide-ot
 function showSlides(n) {
     let slides = document.getElementsByClassName('slide');
+    let prevButton = document.querySelector('.prev');
+    let nextButton = document.querySelector('.next');
 
-    if (n > slides.length) { 
-        slideIndex = 1; 
-        // Újraindítás vizuális effekt
-        slides[slideIndex - 1].classList.add('restart');
-        setTimeout(() => slides[slideIndex - 1].classList.remove('restart'), 500);
+    if (n > slides.length) {
+        slideIndex = 1;
     }
-    if (n < 1) { slideIndex = slides.length }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
 
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
 
     slides[slideIndex - 1].style.display = 'block';
+
+    // Gombok aktiválásának/inaktiválásának kezelése
+    if (slideIndex === 1) {
+        prevButton.style.pointerEvents = 'none';
+        prevButton.style.opacity = '0.5';
+    } else {
+        prevButton.style.pointerEvents = 'auto';
+        prevButton.style.opacity = '1';
+    }
+
+    if (slideIndex === slides.length) {
+        nextButton.style.pointerEvents = 'none';
+        nextButton.style.opacity = '0.5';
+    } else {
+        nextButton.style.pointerEvents = 'auto';
+        nextButton.style.opacity = '1';
+    }
 }
 
 // Slide váltás
 function changeSlide(n) {
     showSlides(slideIndex += n);
 }
-
 // Indítás
 window.onload = function() {
     loadSlides();
