@@ -27,17 +27,19 @@ function showSlides(n) {
     let prevButton = document.querySelector('.prev');
     let nextButton = document.querySelector('.next');
 
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
+    // Ellenőrizzük, hogy a diák indexe kívül esik-e a határokon
+    if (n > slides.length) { 
+        slideIndex = slides.length; // Utolsó diára állítjuk
+    } else if (n < 1) { 
+        slideIndex = 1; // Első diára állítjuk
     }
 
+    // Az összes diát elrejtjük
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
 
+    // Csak az aktuális diát jelenítjük meg
     slides[slideIndex - 1].style.display = 'block';
 
     // Gombok aktiválásának/inaktiválásának kezelése
@@ -62,6 +64,7 @@ function showSlides(n) {
 function changeSlide(n) {
     showSlides(slideIndex += n);
 }
+
 // Indítás
 window.onload = function() {
     loadSlides();
