@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: lightgreen;
     color: #333;
 }
 
@@ -59,7 +59,7 @@ p {
     display: inline-block; /* Egymás mellé rendezett gombok */
     width: auto;
     padding: 10px 20px;
-    background-color: #4CAF50; /* Zöld szín */
+    background-color: lightgreen; /* Zöld szín */
     color: white;
     font-weight: bold;
     font-size: 18px;
