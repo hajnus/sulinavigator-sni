@@ -72,7 +72,7 @@ p {
 }
 
 .prev:hover, .next:hover {
-    background-color: #45a049; /* Sötétebb zöld hover szín */
+    background-color: #0b4e6e; /* Sötétebb kék hover szín */
 }
 
 /* Slide váltás animációja */
