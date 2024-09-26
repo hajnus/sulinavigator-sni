@@ -9,7 +9,7 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background-color: lightgreen; /* Fejléc színe */
+    background-color: #0d5f8a; /* Fejléc színe */
     color: white;
 }
 
@@ -59,7 +59,7 @@ p {
     display: inline-block; /* Egymás mellé rendezett gombok */
     width: auto;
     padding: 10px 20px;
-    background-color: lightgreen; /* Gombok színe */
+    background-color: #0d5f8a; /* Gombok színe */
     color: white;
     font-weight: bold;
     font-size: 18px;
